@@ -1,0 +1,61 @@
+
+1.
+Giordano BL, McAdams S. Material identification of real impact sounds: Effects of size variation in steel, glass, wood, and plexiglass plates. J Acoust Soc Am. 2006;119(2):1171–81. doi:10.1121/1.2149839. 
+
+Giordano and McAdams were curious if the sounds in the real world had enough information for people and machines to determine the content even if the size of the object or the recording conditions varied. In this article, 
+they struck steel, glass, wood, and plexiglass plates in a controlled way, recorded the sounds, and used different size plates. The recordings were then analyzed to find the important features of the sound, such as what the dominant 
+frequencies are and how quickly the sound decreases after impact. They also tested how well people could determine the content or size by listening to the sounds alone and compared the results with the acoustic analysis to determine 
+which features were associated with variations in content or size. The findings indicate that people can still determine the content of an object regardless of its size if the right sound features are taken into account. Specifically, 
+the resonant frequencies and the rate of decay of the sound were the most informative. This article concludes that the frequency of content of impact sounds contains useful information even in real-world conditions. For our project, 
+this paper is important because it provides experimental evidence that tapped object sounds contain meaningful information for classification and offers an approach we can adapt when building our dataset and model. 
+ 
+2.
+Lee JH, Choi IS, Kim HT. Natural frequency-based neural network approach to radar target recognition. IEEE Trans Signal Process. 2003;51(12):3191–7. doi:10.1109/TSP.2003.818908 
+
+Looking at space objects, Lee and colleagues checked if their resonant traits could help sort radar signals through a trained neural model. Since these frequencies stay steady no matter the viewing direction, relying on them might 
+beat raw time-based readings when telling targets apart. Instead of working directly with scattered waves, the team pulled out key modes, natural vibrations plus how quickly they fade, from real or computer-generated captures. These 
+simplified traits became the basis for teaching a network that adjusts itself during learning. Tests ran under varied viewing positions and interference conditions using groups of labeled examples; alongside, older techniques based on 
+timing patterns and alternate frequency strategies got tested too. One big takeaway stood clear: models taught on natural frequency pairs beat the ones using time-domain signals, every single test condition showing it. Not just better 
+overall, they handled shifts in angle more reliably than their time-based counterparts. Instead of raw waveforms, these modal traits offered a cleaner summary of what matters in target signatures. Noise barely touched them, even when 
+squeezed into tight feature spaces. What made this study stick was its grounding in physical principles rather than arbitrary patterns. Each resonant descriptor carried meaning rooted in how objects actually vibrate. Few inputs were needed; 
+still, performance stayed strong across setups. Less got tangled up in irrelevant variations like measurement quirks or background clutter. The whole approach lined up real-world behavior with machine learning needs. A narrow set of frequencies 
+fed straight into classifiers worked surprisingly well. This wasn’t about brute force; it leaned on insight. 
+
+ 
+3.
+Lee JH, Moon HJ, Jeong SH, Choi IS, Chae DY. Dependence of performance on threshold value in natural frequency-based target recognition: Frequency domain approach. J Electromagn Waves Appl. 2014;28(15):1896–912. doi:10.1080/09205071.2014.948125. 
+
+The research described in this paper examines the effects of thresholding on classification from natural-frequency recognition. The main goal of the study was to investigate how a threshold for modal component identification can 
+impact classifications made on signals that are affected by noise. The authors derive expressions for the likelihood of correctly classifying a signal as modal based on differences in their projection (the difference between actual 
+mode shape and mode shape obtained from projection), as well as how to compute the probability densities associated with each projection result. In addition, the authors develop a theoretical framework to enable the computation of the 
+decision statistic to be computed in both time and frequency domains. Finally, the authors provide examples (both simulation and controlled experimental) of the effect of thresholding on signal classification, and demonstrate how poorly 
+selected thresholds lead to a degradation of performance, particularly when using signal-to-noise ratios (SNRs) that are lower than normal or when working with higher-order poles that are contaminated with noise. For our project, this 
+research provides two key contributions: First, it provides insight into the need for a scientific basis in thresholding tasks related to extracting resonant peaks, and second, it provides us with a statistical method for establishing an 
+optimal threshold for classification reliability. Therefore, by utilizing the methodology presented here to select our thresholds, we should be able to eliminate the influence of erroneous modal data associated with unstable feature extraction 
+used to measure data repetitively, thus improving the reliability of the classification process in our database setup. 
+
+  
+4.
+Albaji AO, Rashid RBA, Abdul Hamid SZ. Investigation on machine learning approaches for environmental noise classifications. J Electr Comput Eng. 2023;2023:3615137. doi:10.1155/2023/3615137. 
+
+In this paper, Albaji et al. presents a comparison of various machine learning algorithms and their effectiveness in classifying environmental audio. The authors are trying to address the hypothesis, "Which type of machine learning approaches 
+work best at classifying environmental sounds? “Second, the authors attempt to determine which type of feature gives the best discriminative power when classifying an environmental sound. The authors collect an evenly distributed dataset of 
+environmental sounds, preprocess it using standardized methods (resampling/denoising), extract features from the data (MFCC features, handcrafted spectral features), and evaluate the performance of each algorithm by measuring accuracy and the 
+F1-score and generating confusion matrices. Their results show that ensemble methods (random forest) appear to yield strong baseline performance with lower computational requirements compared to deep learning methods (e.g., convolutional neural networks) 
+when large amounts of labeled data and spectrogram features are available. The authors also write about using feature engineering to improve performance, noise robustness of preprocessing techniques, how to use data augmentation to improve performance, 
+and practical considerations for building a pipeline. This article will be helpful for our project by providing examples of how to create data pipelines. It also helps provide qualifications for using classical machine learning algorithms (SVM, random forest) 
+as baseline methods and using deep learning (convolutional networks) for our data if it grows significantly. Additionally, this article provides insight into the best features for classifying audio data, explains how to evaluate performance 
+(using cross-validation and confusion matrices), and provides examples of creating and evaluating robust measures of performance and fair comparisons between models. 
+
+
+ 
+5.
+Byun YH, Son J, Yun J, Choo H, Won J. Machine learning-based pattern recognition of bender-element signals for predicting sand particle size. Sci Rep. 2025;15:6949. doi:10.1038/s41598-025-91497-9. 
+
+In their research, Byun & co-authors tested if the vibration signal (i.e., bender-element waveforms) used as testing material can provide meaningful data of a material/soil through machine learning analysis. They focused on the bender element waveforms 
+which are time-series vibration signals created as a result of a shear wave propagating through a mass of sand. The hypothesis of the study was that subtle patterns and differences in the received shear wave signals may provide identifiable differences 
+in the material's micro-structure, including the sand. To demonstrate this hypothesis, the authors used a one-dimensional Convolutional Neural Network (CNN) model to learn these subtle patterns directly from the time-series data without the need for 
+excessive human intervention. In the study, successive collections of bender element data were collected from varying material types and wet/dry states through pre-processing and applying a bandpass filter followed by normalization. The CNN model was 
+then evaluated using the traditional train/validation/test split technique. The study successfully demonstrated that the CNN model can consistently differentiate between sand types and accurately predict particle-size classification across multiple test 
+conditions. The authors also reviewed the learned CNN filters and confusion matrices from the CNN model to interpret the components of the bender element signal used by the model in its classification process. For our project, this study is important 
+because it successfully demonstrated machine learning capabilities on vibration / time-series data to infer material properties. This is similar to tapping sounds being used to classify materials.  
