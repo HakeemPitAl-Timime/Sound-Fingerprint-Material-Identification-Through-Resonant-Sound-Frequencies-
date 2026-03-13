@@ -1,5 +1,5 @@
 import numpy as np
-import librosa as lb
+import librosa as lib
 
 class AudioFileSource:
     '''Loads an audio source from a file into a numpy array'''
@@ -10,10 +10,11 @@ class AudioFileSource:
     def load(self, file_path):
         #returns a numpy array
         try:
-            audio, sample_rate = librosa.load(file_path, sr=self.sample_rate)
+            audio, sample_rate = lib.load(file_path, sr=self.sample_rate)
             return audio
         
         except Exception as reason:
             #handles invalid files
             print(f"Please import a valid audio file (WAV, MP3, FLAC, OGG, AIFF, M4A)")
-            print(e)
+            print(reason)
+            return None
