@@ -1,7 +1,7 @@
 path,label
-dataset_audio/metal_01.mp3,metal
-dataset_audio/metal_02.mp3,metal
-dataset_audio/wood_01.mp3,wood
-dataset_audio/wood_02.mp3,wood
-dataset_audio/glass_01.mp3,glass
-dataset_audio/glass_02.mp3,glass
+Audio/metal1.mp3,metal
+Audio/metal2.mp3,metal
+Audio/wood1.mp3,wood
+Audio/wood2.mp3,wood
+Audio/glass1.mp3,glass
+Audio/glass2.mp3,glass
