@@ -119,37 +119,26 @@ class Train_Model:
 
     # Function to load the dataset from CSV.
     def load_dataset(self):
-
         # Read the dataset file using pandas.
         df = pd.read_csv(self.dataset_path)
-
         # Determine which expected features are present in the dataset.
         present = [c for c in self.default_features if c in df.columns]
-
         # Identify any additional columns beyond the default features.
         extras = [c for c in df.columns if c not in (present + [self.label_column])]
-
         # Combine default features and additional features.
         self.feature_columns = present + extras
-
         # Extract the feature matrix X (inputs to the model).
         X = df[self.feature_columns].copy()
-
         # Extract labels (correct material classification).
         y = df[self.label_column].copy()
-
         # Return features and labels.
         return X, y
 
-
-
     # Baseline cross-validation
     def baseline_cv(self, X, y, scoring=None):
-
         # Define metrics used during evaluation.
         if scoring is None:
             scoring = ["accuracy", "f1_macro", "balanced_accuracy"]
-
         # Create a Stratified K-Fold splitter.
         # Stratified means each fold keeps the same class proportions.
         skf = StratifiedKFold(
@@ -157,7 +146,6 @@ class Train_Model:
             shuffle=True,
             random_state=self.random_state
         )
-
         # Run cross-validation on the entire dataset.
         scores = cross_validate(
             self.pipeline,
@@ -167,16 +155,13 @@ class Train_Model:
             scoring=scoring,
             return_train_score=False
         )
-
         print("=== Baseline cross-validation ===")
-
         # Print average performance for each metric.
         for metric in scoring:
             mean = scores[f"test_{metric}"].mean()
             std = scores[f"test_{metric}"].std()
 
             print(f"{metric}: {mean:.4f} ± {std:.4f}")
-
         return scores
 
 
@@ -194,13 +179,9 @@ class Train_Model:
         )
 
         print(f"Train size: {len(X_train)}, Test size: {len(X_test)}")
-
-
         # Perform hyperparameter tuning if enabled.
         if self.do_tuning:
-
             print("Running RandomizedSearchCV...")
-
             rs = RandomizedSearchCV(
                 estimator=self.pipeline,
                 param_distributions=self.param_distributions,
@@ -229,8 +210,6 @@ class Train_Model:
 
             self.best_estimator_ = self.pipeline
             self.best_estimator_.fit(X_train, y_train)
-
-
 
         # Predict on test data.
         y_pred = self.best_estimator_.predict(X_test)
@@ -264,8 +243,6 @@ class Train_Model:
         )
 
         return self.test_results_
-
-
 
     # Feature importance analysis
     def print_feature_importance(self):
