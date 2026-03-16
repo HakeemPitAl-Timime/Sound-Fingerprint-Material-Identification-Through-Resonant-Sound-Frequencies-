@@ -1,7 +1,10 @@
 path,label
-Audio/metal1.mp3,metal
-Audio/metal2.mp3,metal
-Audio/wood1.mp3,wood
-Audio/wood2.mp3,wood
-Audio/glass1.mp3,glass
-Audio/glass2.mp3,glass
+Audio/metal_01.mp3,metal
+Audio/metal_02.mp3,metal
+Audio/metal_03.mp3,metal
+Audio/wood_01.mp3,wood
+Audio/wood_02.mp3,wood
+Audio/wood_03.mp3,wood
+Audio/glass_01.mp3,glass
+Audio/glass_02.mp3,glass
+Audio/glass_03.mp3,glass
