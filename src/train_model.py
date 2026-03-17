@@ -51,7 +51,7 @@ class Train_Model:
                  feature_columns=None,
                  label_column="label",
                  random_state=42,
-                 cv_splits=2,
+                 cv_splits=4,
                  do_tuning=True):
         self.dataset_path = Path(dataset_path) # Path() ensures it works correctly on any operating system.
         self.label_column = label_column   # Store the name of the column containing the labels
