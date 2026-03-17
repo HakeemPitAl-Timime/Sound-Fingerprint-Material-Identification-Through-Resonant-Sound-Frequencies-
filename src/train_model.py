@@ -167,7 +167,7 @@ class Train_Model:
 
 
     # Main training function
-    def tune_and_train(self, X, y, test_size=0.33, n_iter=40):
+    def tune_and_train(self, X, y, test_size=0.2, n_iter=40):
 
         # Split dataset into training and testing sets.
         X_train, X_test, y_train, y_test = train_test_split(
